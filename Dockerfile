@@ -1,5 +1,5 @@
-# pull official base image
-FROM python:3.7.8-alpine3.9
+# pull the official docker image
+FROM python:3.7.8-slim
 
 # set work directory
 WORKDIR /code
