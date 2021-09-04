@@ -16,4 +16,4 @@ blocks:
         - name: do-k8s
       env_vars:
         - name: KUBECONFIG
-          value: /home/semaphore/.kube/dok8s.yml
+          value: ' /home/semaphore/.kube/dok8s.yaml'
