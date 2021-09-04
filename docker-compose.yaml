@@ -1,0 +1,16 @@
+version: "3.7"
+services:
+  smstore-actions:
+    container_name: "smstore-actions"
+    image: "smstore-actions:latest"
+    env_file:
+      - .env.local
+    build:
+      context: ./
+      dockerfile: Dockerfile.local
+      labels:
+        - smstore-actions
+    volumes:
+      - .:/code
+    ports:
+      - 5000:5000
