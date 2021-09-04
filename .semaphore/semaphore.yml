@@ -1,0 +1,19 @@
+version: v1.0
+name: Docker
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu1804
+blocks:
+  - name: Talk to K8s
+    task:
+      jobs:
+        - name: Get nodes
+          commands:
+            - checkout
+            - kubectl get nodes
+      secrets:
+        - name: do-k8s
+      env_vars:
+        - name: KUBECONFIG
+          value: /home/semaphore/.kube/dok8s.yml
