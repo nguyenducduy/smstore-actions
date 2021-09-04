@@ -17,18 +17,8 @@ blocks:
       env_vars:
         - name: KUBECONFIG
           value: /home/semaphore/.kube/dok8s.yaml
-  - name: Install dependencies
-    task:
-      env_vars:
-        - name: PIPENV_VENV_IN_PROJECT
-          value: 'true'
-      prologue:
-        commands:
-          - sudo pip install pipenv
-          - checkout
-      jobs:
-        - name: Install and cache dependencies
-          commands:
-            - 'cache restore pipenv-$SEMAPHORE_GIT_BRANCH-$(checksum Pipfile.lock),pipenv-$SEMAPHORE_GIT_BRANCH,pipenv-master'
-            - pipenv install --dev --deploy
-            - cache store pipenv-$SEMAPHORE_GIT_BRANCH-$(checksum Pipfile.lock) .venv
+promotions:
+  - name: Dockerize
+    pipeline_file: pipeline_2.yml
+    auto_promote:
+      when: branch = 'master'
