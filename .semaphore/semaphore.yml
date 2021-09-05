@@ -4,7 +4,15 @@ agent:
   machine:
     type: e1-standard-2
     os_image: ubuntu1804
-blocks: []
+blocks:
+  - name: Tests
+    dependencies: []
+    task:
+      jobs:
+        - name: Test
+          commands:
+            - checkout
+            - cache restore
 promotions:
   - name: Dockerize
     pipeline_file: pipeline_2.yml
