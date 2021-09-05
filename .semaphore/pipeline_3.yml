@@ -13,8 +13,8 @@ blocks:
             - checkout
             - kubectl get nodes
             - kubectl get pods
-            - envsubst < k8s/deployment.yaml | tee deployment.yaml
-            - kubectl apply -f k8s/deployment.yaml
+            - envsubst < k8s/deployment.yaml | tee _deployment.yaml
+            - kubectl apply -f _deployment.yaml
             - kubectl apply -f k8s/service.yaml
             - kubectl apply -f k8s/ingress.yaml
       secrets:
