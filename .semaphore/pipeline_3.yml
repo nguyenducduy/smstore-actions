@@ -13,8 +13,10 @@ blocks:
             - checkout
             - kubectl get nodes
             - kubectl get pods
-            - envsubst < k8s/deployment.yml | tee k8s/deployment.yml
-            - kubectl apply -f k8s/deployment.yml
+            - envsubst < k8s/deployment.yaml | tee k8s/deployment.yaml
+            - kubectl apply -f k8s/deployment.yaml
+            - kubectl apply -f k8s/service.yaml
+            - kubectl apply -f k8s/ingress.yaml
       secrets:
         - name: do-k8s
         - name: dockerhub
