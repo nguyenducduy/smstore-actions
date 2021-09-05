@@ -1,0 +1,20 @@
+# deployment.yml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: smstore-actions
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: smstore-actions
+  template:
+    metadata:
+      labels:
+        app: smstore-actions
+    spec:
+      containers:
+        - name: smstore-actions
+          image: nguyenducduy/smstore-actions:$SEMAPHORE_WORKFLOW_ID
+      imagePullSecrets: # if using a private image
+        - name: dockerhub-user
