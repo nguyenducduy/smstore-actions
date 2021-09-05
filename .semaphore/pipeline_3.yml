@@ -14,8 +14,6 @@ blocks:
             - kubectl get nodes
             - kubectl get pods
             - envsubst < k8s/deployment.yaml | tee deployment.yaml
-            - envsubst < k8s/service.yaml | tee service.yaml
-            - envsubst < k8s/ingress.yaml | tee ingress.yaml
             - kubectl apply -f k8s/deployment.yaml
             - kubectl apply -f k8s/service.yaml
             - kubectl apply -f k8s/ingress.yaml
