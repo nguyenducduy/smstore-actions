@@ -18,3 +18,6 @@ blocks:
             - 'docker push "${DOCKER_USERNAME}"/smstore-actions:$SEMAPHORE_WORKFLOW_ID'
       secrets:
         - name: dockerhub
+promotions:
+  - name: Deploy to Kubernetes
+    pipeline_file: pipeline_3.yml
