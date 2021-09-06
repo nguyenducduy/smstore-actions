@@ -21,4 +21,4 @@ RUN poetry install --no-interaction
 
 EXPOSE 5000
 
-CMD uvicorn main:app --host 0.0.0.0 --port 5000 --log-level debug --app-dir src --limit-concurrency 500 --limit-max-requests 500
+CMD uvicorn main:app --host 0.0.0.0 --port 5000 --log-level debug --app-dir src --limit-concurrency 500 --limit-max-requests 500 --root-path /actions
