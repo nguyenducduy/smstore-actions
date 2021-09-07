@@ -1,11 +1,10 @@
-from loguru import logger
+import logging
 import inspect
 from gql import Client as GraphqlClient
 from config.graphql_client import transport
-from utils.app_exceptions import AppExceptionCase
+from core.app_exceptions import AppExceptionCase
 
-from mutations.insert_error_logs import query as insertErrorLogs
-
+logger = logging.getLogger(__name__)
 
 class ServiceResult(object):
     def __init__(self, arg):
@@ -45,32 +44,6 @@ def handle_result(result: ServiceResult):
     if not result.success:
         with result as exception:
             logger.error(f"{exception} | caller={caller_info()}")
-
-            if result.exception_case in [
-                'EventTriggerFail',
-                'SyncToEsFail',
-                'CreateMediaFail',
-                'UpdateMediaFail',
-                'FetchAudioFail',
-                'CreateEpisodeFail',
-                'UpdateEpisodeFail',
-                'AddFavoriteFail',
-                'RemoveFavoriteFail',
-                'SubcribeFail',
-                'UnsubcribeFail',
-                'AddFcmFail'
-            ]:
-                graphqlClient = GraphqlClient(
-                    transport=transport,
-                    fetch_schema_from_transport=True
-                )
-                graphqlClient.execute(insertErrorLogs, variable_values={
-                    'object': {
-                        'class_exception_name': str(result.exception_case),
-                        'caller': str(caller_info()),
-                        'message': str(exception)
-                    }
-                })
                 
             raise exception
     with result as result:

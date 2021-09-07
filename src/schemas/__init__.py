@@ -6,14 +6,8 @@ class HasuraForwardActionArgs(BaseModel):
     input: dict
     action: dict
 
-
 class HasuraEventTriggerArgs(BaseModel):
     event: dict
-
-
-class SyncToEsOutput(BaseModel):
-    total_rows: int
-
 
 class EventTriggerOutput(BaseModel):
     affected_rows: int

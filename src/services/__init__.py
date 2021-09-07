@@ -1,10 +1,3 @@
-# from sqlalchemy.orm import Session
-
-# class DBSessionContext(object):
-#     def __init__(self, db: Session):
-#         self.db = db
-
-
 class GraphQLContext(object):
     def __init__(self, graphql_client):
         self.graphql_client = graphql_client
@@ -22,12 +15,3 @@ class AppGraphQLService(GraphQLContext):
 
 class AppGraphQLSearchEngineService(AppGraphQLSearchEngineContext):
     pass
-
-
-class KafkaProducerService(object):
-    def __init__(self, aioproducer):
-        self.aioproducer = aioproducer
-
-
-# class AppCRUD(DBSessionContext):
-#     pass

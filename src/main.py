@@ -13,6 +13,9 @@ from config.settings import (
     IS_DEBUG
 )
 # from config.settings import SENTRY_DNS
+from routers import (
+    user
+)
 
 # setup loggers
 logging.config.fileConfig('logging.conf', disable_existing_loggers=False)
@@ -27,6 +30,8 @@ logger = logging.getLogger(__name__)  # the __name__ resolve to "main" since we 
 
 def get_app() -> FastAPI:
     fast_app = FastAPI(title=APP_NAME, version=APP_VERSION, debug=IS_DEBUG)
+    
+    fast_app.include_router(user.router, tags=["user"], prefix="/user")
     
     fast_app.add_middleware(
         CORSMiddleware,

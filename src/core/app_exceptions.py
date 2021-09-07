@@ -32,4 +32,16 @@ class AppException(object):
             message = message
             AppExceptionCase.__init__(self, status_code, message)
 
+    class SendActivateCodeFail(AppExceptionCase):
+        def __init__(self, message: str = None):
+            status_code = 400
+            message = 'Không thể gửi mã kích hoạt'
+            AppExceptionCase.__init__(self, status_code, message)
+
+    class RegisterUserFail(AppExceptionCase):
+        def __init__(self, message: str = None):
+            status_code = 400
+            message = message
+            AppExceptionCase.__init__(self, status_code, message)
+
     
