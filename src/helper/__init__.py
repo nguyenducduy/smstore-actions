@@ -41,6 +41,9 @@ def _create_access_token(data: dict, expires_delta: Optional[timedelta] = None):
 
     return encoded_jwt
 
+def _get_access_token_expire():
+    return timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
+
 def emailValid(emailAddress):
     """ Check valid email address """
 

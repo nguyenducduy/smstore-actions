@@ -43,5 +43,17 @@ class AppException(object):
             status_code = 400
             message = message
             AppExceptionCase.__init__(self, status_code, message)
+    
+    class ActivateUserFail(AppExceptionCase):
+        def __init__(self, message: str = None):
+            status_code = 400
+            message = message
+            AppExceptionCase.__init__(self, status_code, message)
+
+    class LoginUserFail(AppExceptionCase):
+        def __init__(self, message: str = None):
+            status_code = 400
+            message = message
+            AppExceptionCase.__init__(self, status_code, message)
 
     
