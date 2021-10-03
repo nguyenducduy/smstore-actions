@@ -13,10 +13,10 @@ spec:
         app: smstore-actions
     spec:
       containers:
-      - image: nguyenducduy/smstore-actions:$SEMAPHORE_WORKFLOW_ID
-        name: smstore-actions
+      - name: smstore-actions
+        image: nguyenducduy/smstore-actions:$SEMAPHORE_WORKFLOW_ID
       imagePullSecrets: # if using a private image
-        - name: dockerhub-user
+      - name: dockerhub-user
         env:
         - name: HASURA_GRAPHQL_ADMIN_SECRET
           valueFrom:
