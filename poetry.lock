@@ -358,6 +358,14 @@ optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 
 [[package]]
+name = "pycrypto"
+version = "2.6.1"
+description = "Cryptographic modules for Python."
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
 name = "pydantic"
 version = "1.8.2"
 description = "Data validation and settings management using python 3.6 type hinting"
@@ -606,7 +614,7 @@ typing-extensions = {version = ">=3.7.4", markers = "python_version < \"3.8\""}
 [metadata]
 lock-version = "1.1"
 python-versions = "3.7.8"
-content-hash = "eea3f150ab4d0075974f426025c65969acb762324523e02988ee0bf8383af081"
+content-hash = "a003827e87a447253b7afcc2d5e1bd7e5ea7e8d8be13f4a09f99ebbf5b034834"
 
 [metadata.files]
 aiohttp = [
@@ -875,6 +883,9 @@ pyasn1 = [
 pycparser = [
     {file = "pycparser-2.20-py2.py3-none-any.whl", hash = "sha256:7582ad22678f0fcd81102833f60ef8d0e57288b6b5fb00323d101be910e35705"},
     {file = "pycparser-2.20.tar.gz", hash = "sha256:2d475327684562c3a96cc71adf7dc8c4f0565175cf86b6d7a404ff4c771f15f0"},
+]
+pycrypto = [
+    {file = "pycrypto-2.6.1.tar.gz", hash = "sha256:f2ce1e989b272cfcb677616763e0a2e7ec659effa67a88aa92b3a65528f60a3c"},
 ]
 pydantic = [
     {file = "pydantic-1.8.2-cp36-cp36m-macosx_10_9_x86_64.whl", hash = "sha256:05ddfd37c1720c392f4e0d43c484217b7521558302e7069ce8d318438d297739"},

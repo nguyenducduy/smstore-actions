@@ -56,4 +56,16 @@ class AppException(object):
             message = message
             AppExceptionCase.__init__(self, status_code, message)
 
+    class InvalidCart(AppExceptionCase):
+        def __init__(self, message: str = None):
+            status_code = 400
+            message = 'Invalid Cart!!!'
+            AppExceptionCase.__init__(self, status_code, message)
+    
+    class CreateOrderFail(AppExceptionCase):
+        def __init__(self, message: str = None):
+            status_code = 400
+            message = 'Không thể đặt hàng, vui lòng thử lại sau.'
+            AppExceptionCase.__init__(self, status_code, message)
+
     
