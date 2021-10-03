@@ -15,8 +15,6 @@ spec:
       containers:
       - name: smstore-actions
         image: nguyenducduy/smstore-actions:$SEMAPHORE_WORKFLOW_ID
-        imagePullSecrets: # if using a private image
-        - name: dockerhub-user
         env:
         - name: HASURA_GRAPHQL_ADMIN_SECRET
           valueFrom:
@@ -46,5 +44,7 @@ spec:
           value: "https://api.mailgun.net/v3/{}/messages"
         - name: MAILGUN_DOMAIN
           value: "mail.tiemcuatui.com"
+      imagePullSecrets: # if using a private image
+      - name: dockerhub-user
         
       
