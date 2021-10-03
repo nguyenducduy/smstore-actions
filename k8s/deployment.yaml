@@ -15,8 +15,8 @@ spec:
       containers:
       - image: nguyenducduy/smstore-actions:$SEMAPHORE_WORKFLOW_ID
         name: smstore-actions
-        imagePullSecrets: # if using a private image
-          - name: dockerhub-user
+      imagePullSecrets: # if using a private image
+        - name: dockerhub-user
         env:
         - name: HASURA_GRAPHQL_ADMIN_SECRET
           valueFrom:
