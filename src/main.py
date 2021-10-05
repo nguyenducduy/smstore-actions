@@ -15,7 +15,7 @@ from config.settings import (
 # from config.settings import SENTRY_DNS
 from routers import (
     user,
-    # product,
+    product,
     order
 )
 
@@ -34,7 +34,7 @@ def get_app() -> FastAPI:
     fast_app = FastAPI(title=APP_NAME, version=APP_VERSION, debug=IS_DEBUG)
     
     fast_app.include_router(user.router, tags=["user"], prefix="/user")
-    # fast_app.include_router(product.router, tags=["product"], prefix="/product")
+    fast_app.include_router(product.router, tags=["product"], prefix="/product")
     fast_app.include_router(order.router, tags=["order"], prefix="/order")
     
     fast_app.add_middleware(

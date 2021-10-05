@@ -15,6 +15,8 @@ MAILGUN_URL: str = config("MAILGUN_URL", cast=str, default='')
 MAILGUN_DOMAIN: str = config("MAILGUN_DOMAIN", cast=str, default='')
 MAILGUN_SENDER: str = config("MAILGUN_SENDER", cast=str, default='')
 AES_SECRET_KEY: str = config("AES_SECRET_KEY", cast=str, default='')
+MEILI_MASTER_KEY: str = config("MEILI_MASTER_KEY", cast=str, default='')
+MEILI_URL: str = config("MEILI_URL", cast=str, default='')
 
 ORDER_PENDING = 'pending'
 ORDER_CONFIRMED = 'confirmed'

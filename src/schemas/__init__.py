@@ -10,4 +10,4 @@ class HasuraEventTriggerArgs(BaseModel):
     event: dict
 
 class EventTriggerOutput(BaseModel):
-    affected_rows: int
+    update_id: int

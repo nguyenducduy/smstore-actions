@@ -24,7 +24,7 @@ spec:
         - name: HASURA_SECRET_KEY
           valueFrom:
             secretKeyRef:
-              name: smstore-hasura-jwt-secret
+              name: smstore-jwt-secret
               key: value
         - name: MAILGUN_API_KEY
           valueFrom:
@@ -36,6 +36,13 @@ spec:
             secretKeyRef:
               name: smstore-aes-secret-key
               key: value
+        - name: MEILI_MASTER_KEY
+          valueFrom:
+            secretKeyRef:
+              name: smstore-meili-master-key
+              key: value
+        - name: MEILI_URL
+          value: "http://meilisearch"
         - name: HASURA_GRAPHQL_ENDPOINT
           value: "http://smstore-core/v1/graphql"
         - name: MAILGUN_SENDER
