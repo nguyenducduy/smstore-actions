@@ -42,7 +42,7 @@ spec:
               name: smstore-meili-master-key
               key: value
         - name: MEILI_URL
-          value: "http://meilisearch"
+          value: "http://meilisearch:7700"
         - name: HASURA_GRAPHQL_ENDPOINT
           value: "http://smstore-core/v1/graphql"
         - name: MAILGUN_SENDER
