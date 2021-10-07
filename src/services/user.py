@@ -82,7 +82,7 @@ class UserService(AppGraphQLService):
 
         if 'users' in r and len(r['users']) > 0:
             store = {
-                'domain': form_data['name'],
+                'domain': form_data['name'].lower(),
                 'name': form_data['name'],
                 'screen_name': form_data['screen_name'],
                 'is_activated': True,

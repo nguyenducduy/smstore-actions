@@ -89,7 +89,7 @@ def send_mail(htmlMessage, subject, recipient):
     else:
         return True
 
-def random_string(size=24, chars=string.ascii_letters + string.digits):
+def random_string(size=8, chars=string.ascii_letters + string.digits):
     """ Generate random string """
 
     return ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(size))
