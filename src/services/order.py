@@ -39,7 +39,8 @@ class OrderService(AppGraphQLService):
                     'product_id': product['id'],
                     'quantity': product['quantity'],
                     'unit_price': product['unitPrice'],
-                    'sub_total': product['totalPrice']
+                    'sub_total': product['totalPrice'],
+                    'options': product['options']
                 }
                 
                 products.append(my_product)
